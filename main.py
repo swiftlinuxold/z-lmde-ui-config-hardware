@@ -32,6 +32,8 @@ os.system ('echo ============================')
 os.system ('echo BEGIN ADDING HARDWARE WIZARD')
 
 import shutil, subprocess
+
+add_pkg ('pmount')
 	
 src = dir_develop + '/ui-config-hardware/usr_local_bin/config-hardware.py'
 dest = '/usr/local/bin/config-hardware.py'
