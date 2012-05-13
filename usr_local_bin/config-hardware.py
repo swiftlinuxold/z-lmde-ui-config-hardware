@@ -23,7 +23,7 @@ class Wizard:
         # OPTION 1: GParted
         self.box_image = '/usr/share/icons/hicolor/32x32/apps/gparted.png'
         self.box_label = 'GParted (Partition Editor)'
-        self.box = self.wizard_option (self.box_image, self.box_label, self.synaptic)
+        self.box = self.wizard_option (self.box_image, self.box_label, self.gparted)
         self.vbox.add (self.box)
         
         # Show everything
@@ -39,12 +39,9 @@ class Wizard:
         gtk.main_quit()
         return False
         
-    def synaptic (self, widget, callback_data=None):
-        os.system ('gksu synaptic &')
-        
-    def software_center (self, widget, callback_data=None):
-        os.system ('gksu mintinstall &')
-    
+    def gparted (self, widget, callback_data=None):
+        os.system ('gksu gparted &')
+            
     def wizard_option (self, filename_image, string_label, fctn_action):
         # Horizontal box
         self.hbox = gtk.HBox ()
